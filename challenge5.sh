@@ -23,7 +23,6 @@ while true; do
     read pid
     kill $pid
 
-    # Wait for user input before continuing the loop
     echo "Press any key to continue or Ctrl + C to exit."
-    read -n 1 -s  # -n 1: wait for a single character; -s: silent, don't echo input
+    read -n 1 -s  
 done
