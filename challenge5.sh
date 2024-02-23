@@ -24,5 +24,5 @@ while true; do
     kill $pid
 
     echo "Press any key to continue or Ctrl + C to exit."
-    read -n 1 -s  
+    read -n 1  
 done
