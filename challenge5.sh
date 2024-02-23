@@ -13,7 +13,7 @@
 
 show_processes() {
     echo "Displaying running processes:"
-    ps 
+    ps -ef 
 }
 
 # Main loop
@@ -21,7 +21,9 @@ while true; do
     show_processes
     echo "Enter PID to kill (or press Ctrl + C to exit):"
     read pid
-    kill $pid 2>/dev/null
+    kill $pid
 
-    
+    # Wait for user input before continuing the loop
+    echo "Press any key to continue or Ctrl + C to exit."
+    read -n 1 -s  # -n 1: wait for a single character; -s: silent, don't echo input
 done
