@@ -13,7 +13,7 @@
 
 show_processes() {
     echo "Displaying running processes:"
-    ps -ef 
+    top -n 1
 }
 
 # Main loop
@@ -24,5 +24,5 @@ while true; do
     kill $pid
 
     echo "Press any key to continue or Ctrl + C to exit."
-    read -n 1  
+    read -n 1    
 done
