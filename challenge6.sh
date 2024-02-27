@@ -7,26 +7,20 @@
 # Purpose:                      Use a conditonal to check for a file or dir
 
 # Define an array
-items_to_check=("file1.txt" "dir1")
+files=(file1.txt file2.txt file3.txt file4.txt)
 
-
-for item in "${items_to_check[@]}"; do
-
-  if [ -f "$item" ]; then
-    echo "File $item exists."
-  
-  elif [ -d "$item" ]; then
-    echo "Directory $item exists."
- 
+# For loop iterates through each value in array
+for file in "${files[@]}"
+do
+  # If conditional, checks if the file exists
+  if [ -f "$file" ]; then
+    # If file exists then print out the following statement.
+    echo "$file exists."
+  # If file does not exist, create it.
   else
-
-    if [[ "$item" == *.txt ]]; then
-      echo "Creating file $item."
-      touch "$item" 
-    else
-      echo "Creating directory $item."
-      mkdir "$item" 
-    fi
+    echo "$file does not exist."
+    touch $file
+    echo "The $file has been created."
   fi
 done
 # Array Declaration: This line declares an array named items_to_check containing two elements: file1.txt and dir1. Arrays in Bash allow you to store multiple values in a single variable.
