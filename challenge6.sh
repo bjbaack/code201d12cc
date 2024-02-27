@@ -6,27 +6,26 @@
 # Date of latest revision:      02/26/2024
 # Purpose:                      Use a conditonal to check for a file or dir
 
-# Define an array of names for files or directories you want to check
+# Define an array
 items_to_check=("file1.txt" "dir1")
 
-# Loop through the array
+
 for item in "${items_to_check[@]}"; do
-  # Check if the item is a file
+
   if [ -f "$item" ]; then
     echo "File $item exists."
-  # Check if the item is a directory
+  
   elif [ -d "$item" ]; then
     echo "Directory $item exists."
-  # If the item doesn't exist, create it
+ 
   else
-    # Decide to create a file or directory based on some condition
-    # For simplicity, if the name contains ".txt", we assume it's a file
+
     if [[ "$item" == *.txt ]]; then
       echo "Creating file $item."
-      touch "$item" # This command creates a new file
+      touch "$item" 
     else
       echo "Creating directory $item."
-      mkdir "$item" # This command creates a new directory
+      mkdir "$item" 
     fi
   fi
 done
