@@ -28,3 +28,8 @@ echo.> Ops201\notes\workstation_deployment_SOP.txt
 #To print
 
 dir /s C:\Users\bradbaack\Desktop\Ops201
+
+## Resources
+https://www.makeuseof.com/tag/use-windows-batch-file-commands-automate-repetitive-tasks/
+
+https://en.wikibooks.org/wiki/Windows_Batch_Scripting
