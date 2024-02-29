@@ -14,3 +14,7 @@ Get-EventLog -LogName System | Where-Object {$_.EventID -eq 16}
 Get-EventLog -LogName System -Newest 20
 
 Get-EventLog -LogName System -Newest 500 | Select-Object Source -Unique | Format-Table -Wrap -AutoSize
+
+
+#Sources
+https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1
