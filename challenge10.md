@@ -4,9 +4,9 @@
 # Purpose:                      Kill process in powershell.
 
 
-Get-Process | Sort-Object CPU -Descending | Format-Table -AutoSize
+Get-Process | Sort-Object CPU -Descending 
 
-Get-Process | Sort-Object Id -Descending | Format-Table -AutoSize
+Get-Process | Sort-Object Id -Descending 
 
 Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 5 | Format-Table -AutoSize
 
