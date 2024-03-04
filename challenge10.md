@@ -12,10 +12,6 @@ Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 5 | Form
 
 Start-Process "chrome.exe" 
 
-for ($i=0; $i -lt 10; $i++) {
-    Start-Process "notepad.exe"
-}
-
 Get-Process notepad | Stop-Process
 
 Stop-Process -Id 1234 -Force
