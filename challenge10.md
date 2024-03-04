@@ -10,7 +10,7 @@ Get-Process | Sort-Object Id -Descending | Format-Table -AutoSize
 
 Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 5 | Format-Table -AutoSize
 
-Start-Process "chrome.exe" "https://owasp.org/www-project-top-ten/"
+Start-Process "chrome.exe" 
 
 for ($i=0; $i -lt 10; $i++) {
     Start-Process "notepad.exe"
