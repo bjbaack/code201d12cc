@@ -1,24 +1,39 @@
 #!/bin/bash
 
-# Script Name:                  Challenge 4
-# Author:                       Brad Baack
-# Date of latest revision:      02/22/2024
-# Purpose:                      Create Directories and put them in array
+# Read two numbers from the user
+echo "Enter the first number:"
+read num1
+echo "Enter the second number:"
+read num2
 
+# Read the action from the user
+echo "Enter the action (add, subtract, multiply, divide):"
+read action
 
+# Perform the calculation based on the action
+case $action in
+    add)
+        result=$(echo "$num1 + $num2" | bc)
+        ;;
+    subtract)
+        result=$(echo "$num1 - $num2" | bc)
+        ;;
+    multiply)
+        result=$(echo "$num1 * $num2" | bc)
+        ;;
+    divide)
+        if [ $num2 -eq 0 ]; then
+            echo "Division by zero is not allowed."
+            exit 1
+        else
+            result=$(echo "scale=2; $num1 / $num2" | bc)
+        fi
+        ;;
+    *)
+        echo "Invalid action. Please use add, subtract, multiply, or divide."
+        exit 1
+        ;;
+esac
 
-# Declaration of variables
-directories=("dir1" "dir2" "dir3" "dir4")               
-
-# Declaration of functions
-create_dir() {
-  local dir_name=$1  
-  mkdir -p "$dir_name"  
-  touch "${dir_name}/test.txt" 
-}
-# Main
-create_dir "${directories[0]}"
-create_dir "${directories[1]}"
-create_dir "${directories[2]}"
-create_dir "${directories[3]}"
-# End
+# Display the result
+echo "Result: $result"
